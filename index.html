@@ -301,7 +301,7 @@
       content = content.replace(/```(\w+)?\n([\s\S]*?)```/g, (match, language, code) => {
         return `<pre><code class="${language || ''}">${code.trim()}</code></pre>`;
       });
-      content = content.replace(/^[-*•]\s(.+)$/gm, '<li>$1</li>');
+      content = content.replace(/^[-*\u2022]\s(.+)$/gm, '<li>$1</li>');
       content = content.replace(/<li>.*?<\/li>/gs, match => `<ul>${match}</ul>`);
       
       messageDiv.innerHTML = content;
